@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        meta(name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(charset="UTF-8")
+        title Document
+        link(rel="stylesheet" href="../client/common/common.css")
+        link(rel="stylesheet" href="../client/post/delete.css")
+    body
+        div.container.delete
+            div.delete__wrapper
+                span#id(style="display:none;" data-id=id)
+                p Подтвердите удаление
+                button.delete__btn Удалить
+                a.cancel__btn.btn(href="/post/"+id) Отмена
+            p.delete__status
+            a(href="/posts") All posts
+        script(src="../client/common/common.js")
+        script(src="../client/post/delete.js")

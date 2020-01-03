@@ -1,4 +1,5 @@
 body {
+    min-width: 320px;
     margin: 0;
     display: flex;
     align-items: center;
@@ -24,6 +25,8 @@ button,
     display: block;
     color: black;
     text-align: center;
+    font-size: 0.8rem;
+    font-family: Arial, sans-serif;
 }
 
 .btn:hover,
@@ -34,7 +37,7 @@ button:active {
 }
 
 .container {
-    min-width: 310px;
+    min-width: 300px;
     width: 50%;
 }
 

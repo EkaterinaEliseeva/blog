@@ -12,9 +12,11 @@ const loginCheckController = require('./controllers/loginCheckController');
 const createUserController = require('./controllers/createUserController');
 const getPostsController = require('./controllers/getPostsController');
 const logoutController = require('./controllers/logoutController');
+const renderDeletePage = require('./controllers/renderDeletePage');
 
 
 const checkAuth = (req, res, next) => {
+    console.log(req.session.auth);
     if (req.session.auth === 'ok') {
         next();
     } else {
@@ -44,8 +46,12 @@ router.use(express.urlencoded({ extended: true }));
 router
     .route('/post')
     .post(createPostController)
-    .delete(checkAuth, deletePostController)
-    .put(editPostController);
+    .put(editPostController)
+    .delete(deletePostController);
+
+// для перехода на страницу удаления поста, если пользователь залогинен
+router
+    .get('/delete/:id',checkAuth, renderDeletePage);
 
 // для получения списка всех постов
 router

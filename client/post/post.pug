@@ -23,13 +23,9 @@ html
                 p.post__categories #{result.categories}
                 p.post__content #{result.content}
             div.post__btns
-                button.post__btn.del(type="submit") Delete
+                a.post__btn.del.btn(href="/delete/" + result._id) Удалить
                 button.post__btn.change(type="submit") Edit
             p.post__status
-            div.popup
-                div.popup__wrapper
-                    p Подтвердите удаление
-                    button.popup__btn Удалить
             a(href="/posts") All posts
         script(src="../client/common/common.js")
         script(src="../client/post/post.js")

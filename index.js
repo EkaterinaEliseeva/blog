@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 const router = require('./routes');
 const session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session);
 
 app.use(session({
     secret: 'mysecret',
