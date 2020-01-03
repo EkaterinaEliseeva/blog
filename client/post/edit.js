@@ -24,7 +24,7 @@
     saveBtn.addEventListener('click', (evt) => {
         evt.preventDefault();
 
-        const url = 'http://localhost:4000/post';
+        const url = '/post';
 
 
         const newData = {

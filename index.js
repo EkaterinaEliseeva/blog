@@ -1,7 +1,7 @@
 const conn = require('./conn');
 const express = require('express');
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 const router = require('./routes');
 const session = require('express-session');
 var MongoStore = require('connect-mongo')(session);

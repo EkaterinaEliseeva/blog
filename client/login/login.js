@@ -30,7 +30,7 @@
             .then((res)=> {
                 console.log(res);
                 if (res === 'ok') {
-                    window.location.href = 'http://localhost:4000/posts'
+                    window.location.href = '/posts'
                 } else {
                     status.textContent = res;
                 }

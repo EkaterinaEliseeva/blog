@@ -7,7 +7,7 @@
     }
 
     const fragment = document.createDocumentFragment();
-    const url = 'http://localhost:4000/allposts';
+    const url = '/allposts';
 
     fetch(url)
         .then(res=> res.json())

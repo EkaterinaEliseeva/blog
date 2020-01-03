@@ -19,7 +19,7 @@
     function onDeleteBtnClick(evt) {
         evt.preventDefault();
 
-        const url = 'http://localhost:4000/post';
+        const url = '/post';
 
         const id = document.querySelector('#id').textContent;
 

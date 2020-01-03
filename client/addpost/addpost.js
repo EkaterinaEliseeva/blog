@@ -13,7 +13,8 @@
         const title = form.querySelector('#title').value;
         const categories = form.querySelector('#categories').value;
         const content = form.querySelector('#content').value;
-        const url = 'http://localhost:4000/post';
+
+        const url = '/post';
 
         const postData = {
             title,
