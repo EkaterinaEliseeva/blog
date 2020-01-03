@@ -2,7 +2,6 @@ const {User} = require('../conn');
 
 module.exports = async	(req, res)	=> {
     const {login, password} = req.body;
-    console.log(login, password);
     const user = await User.findOne({login});
     if (user) {
         if (user.password === password)	{

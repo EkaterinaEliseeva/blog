@@ -22,6 +22,14 @@ const checkAuth = (req, res, next) => {
     }
 };
 
+const checkLogin = (req, res, next) => {
+    if (req.session.auth === 'ok') {
+        res.redirect('/posts');
+    } else {
+        next();
+    }
+};
+
 router.use(function timeLog(req, res, next) {
     console.log('Time: ', Date.now());
     next();
@@ -80,7 +88,7 @@ router
 
 // отдает html файл со страницей login
 router
-    .get('/login', (req, res) => {
+    .get('/login', checkLogin, (req, res) => {
         res.sendFile('client/login/login.html', {root: __dirname })
     })
     // рендерит страницу определенного поста
