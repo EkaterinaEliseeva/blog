@@ -38,6 +38,13 @@ button:active {
     width: 50%;
 }
 
+@media(max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
 .wrapper {
     display: flex;
     justify-content: space-between;
