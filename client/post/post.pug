@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(charset="UTF-8")
+        title Document
+        link(rel="stylesheet" href="../client/common/common.css")
+        link(rel="stylesheet" href="../client/post/post.css")
+    body
+        div.container
+            h1 Post
+            form(action="" class="post")
+                span#id(style="display:none") #{result._id}
+                h3.post__content #{result.title}
+                p.post__categories #{result.categories}
+                p.post__content #{result.content}
+            div.post__btns
+                button.post__btn.del(type="submit") Delete
+                button.post__btn.change(type="submit") Edit
+            p.post__status
+            div.popup
+                div.popup__wrapper
+                    p Подтвердите удаление
+                    button.popup__btn Удалить
+            a(href="/posts") All posts
+            script(src="../client/post/post.js")

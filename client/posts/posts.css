@@ -1,0 +1,12 @@
+.posts__item {
+    display: block;
+    background: #ececec;
+    padding: 10px 20px;
+    margin: 0 0 30px 0;
+    text-decoration: none;
+    color: #000000
+}
+
+.posts__categories {
+    color: darkcyan;
+}
