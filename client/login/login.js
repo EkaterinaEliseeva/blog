@@ -12,7 +12,7 @@
 
         const login = form.querySelector('#login').value;
         const password = form.querySelector('#password').value;
-        const url = 'http://localhost:4000/logincheck';
+        const url = '/logincheck';
 
         const data = {
             login,
