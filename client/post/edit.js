@@ -9,7 +9,7 @@
     const categories = form.querySelector('#categories');
     const content = form.querySelector('#content');
 
-    if (!saveBtn && !select && !status) {
+    if (!saveBtn && !select && !status && !form && !options && !id && !title && !categories && !content) {
         return;
     }
 

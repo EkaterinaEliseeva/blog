@@ -4,7 +4,7 @@
     const popup = document.querySelector('.popup');
     const status = document.querySelector('.post__status');
 
-    if (!delBtn && !changeBtn) {
+    if (!delBtn && !changeBtn && !popup && !status) {
         return;
     }
 

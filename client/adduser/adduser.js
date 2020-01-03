@@ -5,7 +5,7 @@
 
     if (!btn && !form && !status) {
         return;
-    };
+    }
 
     form.addEventListener('submit', (evt) => {
         evt.preventDefault();
@@ -26,8 +26,13 @@
             },
             body: JSON.stringify(postData),
         })
-            .then(() => {
-                window.location.href = "/login"
+            .then(res => res.json())
+            .then((res) => {
+                if (res._id) {
+                    window.location.href = "/login"
+                } else {
+                    status.textContent = res
+                }
             })
             .catch((err)=>{
                 status.textContent = err;

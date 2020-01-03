@@ -5,7 +5,7 @@
 
     if (!btn && !form && !status) {
         return;
-    };
+    }
 
     form.addEventListener('submit', (evt) => {
         evt.preventDefault();
