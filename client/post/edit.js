@@ -43,7 +43,7 @@
         })
             .then(res => res.json())
             .then((res) => {
-                status.textContent = res;
+                window.location.href = '/post/'+id;
             })
             .catch((err) => {
                 status.textContent = err
