@@ -10,23 +10,25 @@
     <link rel="stylesheet" href="client/login/login.css">
 </head>
 <body>
-    <form class="login-form">
-        <h1 class="login-form__title">Вход</h1>
-        <ul class="login-form__list">
-            <li class="login-form__item">
-                <label for="login">Username</label>
-                <input type="text" id="login" required>
-            </li>
-            <li class="login-form__item">
-                <label for="password">Password</label>
-                <input type="text" id="password" required>
-            </li>
-        </ul>
-        <button class="login-form__btn" type="submit">Sign in</button>
-        <p class="login-form__status"></p>
-        <a href="/adduser">Зарегистрироваться</a>
-        <a href="/posts">All posts</a>
-    </form>
+    <div class="container">
+        <form class="login-form">
+            <h1 class="login-form__title">Вход</h1>
+            <ul class="login-form__list">
+                <li class="login-form__item">
+                    <label for="login">Username</label>
+                    <input type="text" id="login" required>
+                </li>
+                <li class="login-form__item">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" required>
+                </li>
+            </ul>
+            <button class="login-form__btn" type="submit">Sign in</button>
+            <p class="login-form__status"></p>
+            <a href="/adduser">Зарегистрироваться</a>
+            <a href="/posts">All posts</a>
+        </form>
+        </div>
     <script src="client/common/common.js"></script>
     <script src="client/login/login.js"></script>
 </body>
