@@ -47,14 +47,14 @@
         popup.querySelector('.popup__btn').addEventListener('click', onDeleteBtnClick);
         popup.addEventListener('click', closePopup);
 
-    })
+    });
 
     changeBtn.addEventListener('click', (evt) => {
         evt.preventDefault();
 
         const id = document.querySelector('#id').textContent;
 
-        const url = 'http://localhost:4000/edit/' + id;
+        const url = '/edit/' + id;
 
         window.location.href = url;
     })

@@ -10,11 +10,11 @@ module.exports = async (req, res) => {
 
         if (x.n === 0) {
             // если поста нет
-            res.send('<p> no posts </p> <a href="http://localhost:4000/posts">All posts</a>')
+            res.send('<p> no posts </p> <a href="/posts">All posts</a>')
         } else {
             // если пост удален, редиректим на список постов
             // это не работает, при успешном удалении срабатывает window.location.href на фронте
-            res.redirect(303, 'http://localhost:4000/posts');
+            res.redirect(303, '/posts');
         }
 
     } catch (e) {
