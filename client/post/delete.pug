@@ -10,10 +10,10 @@ html
     body
         div.container.delete
             div.delete__wrapper
-                span#id(style="display:none;" data-id=id)
+                span#id(style="display:none;" data-id=id.id)
                 p Подтвердите удаление
                 button.delete__btn Удалить
-                a.cancel__btn.btn(href="/post/"+id) Отмена
+                a.cancel__btn.btn(href="/post/"+id.id) Отмена
             p.delete__status
             a(href="/posts") All posts
         script(src="../client/common/common.js")

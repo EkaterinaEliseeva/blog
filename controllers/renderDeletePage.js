@@ -1,7 +1,7 @@
 module.exports = (req, res) => {
     // получаем id из параметров запроса
-    const {id} = req.params;
+    const id = req.params;
 
     // рендерим страницу для удаления поста
-    res.render('delete', id);
+    res.render('delete', {id});
 };
