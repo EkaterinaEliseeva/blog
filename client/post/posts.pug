@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        meta(name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(charset="UTF-8")
+        title Document
+        link(rel="stylesheet" href="../client/common/common.css")
+        link(rel="stylesheet" href="../client/posts/posts.css")
+    body
+        div.container
+            div.wrapper
+                h1 Posts
+                if login
+                    div
+                        span.login #{login}
+                        a(href="/logout") Logout
+                else
+                    a(href="/login") Login
+            div.posts__list
+                if posts
+                    each post in posts
+                        a.posts__item(href="/post/"+post.id)
+                            h3.posts__title #{post.title}
+                            p.posts__categories #{post.categories}
+                            p.posts__content #{post.content}
+                else
+                    p No posts yet
+
+            a.btn(href="/addpost") Add post
+    script(src="client/posts/posts.js")

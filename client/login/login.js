@@ -12,7 +12,7 @@
 
         const login = form.querySelector('#login').value;
         const password = form.querySelector('#password').value;
-        const url = 'http://localhost:3000/login';
+        const url = 'http://localhost:4000/logincheck';
 
         const data = {
             login,
@@ -26,8 +26,16 @@
             },
             body: JSON.stringify(data),
         })
-            .then(()=> {console.log('ok')})
-            .catch((err)=>console.log(err));
+            .then((res)=> res.json())
+            .then((res)=> {
+                console.log(res);
+                if (res === 'ok') {
+                    window.location.href = 'http://localhost:4000/posts'
+                } else {
+                    status.textContent = res;
+                }
+            })
+            .catch((err)=>{status.textContent = err;});
     })
 
 })();

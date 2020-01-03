@@ -27,10 +27,14 @@ app.use(router);
 // папка со стачическими файлами
 app.use(express.static('.'));
 
+// если 404 редирект на /posts
+app.use(({ res: r }) => r.status(404).redirect('/posts'))
+    .use((e, r, rs, n) => rs.status(500).end(`Ошибка: ${e}`));
+
 app.listen(port, (err) => {
     if (err) {
         return console.log('something bad happened', err);
     }
-    console.log(`server is listening on ${port}`);
+    console.log(`server is listening on http://localhost:${port}`);
 });
 

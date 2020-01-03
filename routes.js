@@ -8,7 +8,19 @@ const getPostController = require('./controllers/getPostController');
 const deletePostController = require('./controllers/deletePostController');
 const getEditPostController = require('./controllers/getEditPostController');
 const editPostController = require('./controllers/editPostController');
+const loginCheckController = require('./controllers/loginCheckController');
+const createUserController = require('./controllers/createUserController');
+const getPostsController = require('./controllers/getPostsController');
+const logoutController = require('./controllers/logoutController');
 
+
+const checkAuth = (req, res, next) => {
+    if (req.session.auth === 'ok') {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+};
 
 router.use(function timeLog(req, res, next) {
     console.log('Time: ', Date.now());
@@ -24,7 +36,7 @@ router.use(express.urlencoded({ extended: true }));
 router
     .route('/post')
     .post(createPostController)
-    .delete(deletePostController)
+    .delete(checkAuth, deletePostController)
     .put(editPostController);
 
 // для получения списка всех постов
@@ -35,9 +47,11 @@ router
 // отдает html файл со списком постов
 router
     .route('/posts')
-    .get((req, res) => {
-        res.sendFile('client/posts/posts.html', {root: __dirname })
-    });
+    .get(getPostsController);
+    // .get((req, res) => {
+    //     res.sendFile('client/posts/posts.html', {root: __dirname })
+    // });
+
 
 // отдает html файл со страницей добавления поста
 router
@@ -46,6 +60,24 @@ router
         res.sendFile('client/addpost/addpost.html', {root: __dirname })
     });
 
+router
+    .route('/logout')
+    .get(logoutController);
+
+// для проверки логина пароля
+router
+    .route('/logincheck')
+    .post(loginCheckController);
+
+
+// для добавления нового пользователя
+router
+    .route('/adduser')
+    .get((req,res) => {
+        res.sendFile('client/adduser/adduser.html', {root: __dirname })
+    })
+    .post(createUserController);
+
 // отдает html файл со страницей login
 router
     .get('/login', (req, res) => {
@@ -53,9 +85,9 @@ router
     })
     // рендерит страницу определенного поста
     .get('/post/:id', getPostController)
-    // рендерит страницу изменения определенного поста
-    .get('/edit/:id', getEditPostController);
 
+    // рендерит страницу изменения определенного поста
+    .get('/edit/:id', checkAuth, getEditPostController);
 
 
 module.exports = router;

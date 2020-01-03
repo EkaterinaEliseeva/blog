@@ -9,7 +9,14 @@ html
         link(rel="stylesheet" href="../client/post/post.css")
     body
         div.container
-            h1 Post
+            div.wrapper
+                h1 Post
+                if login
+                    div
+                        span.login #{login}
+                        a(href="/logout") Logout
+                else
+                    a(href="/login") Login
             form(action="" class="post")
                 span#id(style="display:none") #{result._id}
                 h3.post__content #{result.title}

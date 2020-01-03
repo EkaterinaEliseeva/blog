@@ -1,0 +1,4 @@
+.adduser {
+    display: flex;
+    flex-direction: column;
+}

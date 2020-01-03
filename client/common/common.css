@@ -26,6 +26,8 @@ button,
     text-align: center;
 }
 
+.btn:hover,
+.btn:active,
 button:hover,
 button:active {
     opacity: 0.7;
@@ -34,4 +36,14 @@ button:active {
 .container {
     min-width: 400px;
     width: 50%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login {
+    margin-right: 10px;
 }
