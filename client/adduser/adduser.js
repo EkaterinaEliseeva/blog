@@ -27,7 +27,7 @@
             body: JSON.stringify(postData),
         })
             .then(() => {
-                window.location.href = "http://localhost:4000/login"
+                window.location.href = "/login"
             })
             .catch((err)=>{
                 status.textContent = err;
